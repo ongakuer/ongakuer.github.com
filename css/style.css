@@ -33,9 +33,19 @@ sub, sup {font-size: 75%; line-height: 0; position: relative; vertical-align: ba
 
 
 .newfont{font-family:"colaborate-thinregular","Helvetica Neue", "Hiragino Sans GB", "Segoe UI", "Microsoft Yahei", "微软雅黑", Tahoma, Arial, STHeiti, sans-serif; }
-
 .logo{color:#FFF;text-shadow:0 1px 1px rgba(0,0,0,.2);position: absolute;right: 5%;top:10%;}
-.github{font-size:60px;height: 80px;line-height: 80px}
+.github{font-size:60px;height: 60px;line-height: 50px;margin-top: 15px;position:relative;
+		-webkit-animation-duration: 1s;
+	   -moz-animation-duration: 1s;
+	     -o-animation-duration: 1s;
+	        animation-duration: 1s;
+	-webkit-animation-fill-mode: both;
+	   -moz-animation-fill-mode: both;
+	     -o-animation-fill-mode: both;
+	        animation-fill-mode: both;
+}
+
+.github a{color: #FFF;}
 .line{display: block;width:1px;height:52px;margin:17px 25px 0px;background: #FFF;box-shadow:0 1px 1px rgba(0,0,0,.2)}
 .user-info{margin-top:19px}
 .sns a{display:block;width:20px;height: 20px; text-indent: -9999em;float:left;margin-right:10px}
@@ -43,7 +53,6 @@ sub, sup {font-size: 75%; line-height: 0; position: relative; vertical-align: ba
 .snippet{background: url("../img/snippet.png") no-repeat;margin-right:0px}
 
 .relex{font-size:20px;line-height: 24px;height: 24px;margin-top: 8px;}
-
 #tips{
 	position:absolute;
 	background: #000;
@@ -56,8 +65,6 @@ sub, sup {font-size: 75%; line-height: 0; position: relative; vertical-align: ba
 	border-radius: 4px;
 	display: none
 }
-
-
 #tips:after{
 	display: block;
 	position: absolute;
@@ -70,4 +77,43 @@ sub, sup {font-size: 75%; line-height: 0; position: relative; vertical-align: ba
 	border:4px solid rgba(0,0,0,.8); 
 	border-color:#000 transparent transparent  transparent ;
 	border-color:rgba(0,0,0,.8) transparent transparent transparent ;
+}
+
+@-webkit-keyframes tada {
+	0% {-webkit-transform: scale(1);}	
+	10%, 20% {-webkit-transform: scale(0.9) rotate(-3deg);}
+	30%, 50%, 70%, 90% {-webkit-transform: scale(1.1) rotate(3deg);}
+	40%, 60%, 80% {-webkit-transform: scale(1.1) rotate(-3deg);}
+	100% {-webkit-transform: scale(1) rotate(0);}
+}
+
+@-moz-keyframes tada {
+	0% {-moz-transform: scale(1);}	
+	10%, 20% {-moz-transform: scale(0.9) rotate(-3deg);}
+	30%, 50%, 70%, 90% {-moz-transform: scale(1.1) rotate(3deg);}
+	40%, 60%, 80% {-moz-transform: scale(1.1) rotate(-3deg);}
+	100% {-moz-transform: scale(1) rotate(0);}
+}
+
+@-o-keyframes tada {
+	0% {-o-transform: scale(1);}	
+	10%, 20% {-o-transform: scale(0.9) rotate(-3deg);}
+	30%, 50%, 70%, 90% {-o-transform: scale(1.1) rotate(3deg);}
+	40%, 60%, 80% {-o-transform: scale(1.1) rotate(-3deg);}
+	100% {-o-transform: scale(1) rotate(0);}
+}
+
+@keyframes tada {
+	0% {transform: scale(1);}	
+	10%, 20% {transform: scale(0.9) rotate(-3deg);}
+	30%, 50%, 70%, 90% {transform: scale(1.1) rotate(3deg);}
+	40%, 60%, 80% {transform: scale(1.1) rotate(-3deg);}
+	100% {transform: scale(1) rotate(0);}
+}
+
+.github:hover{
+    -webkit-animation-name: tada;
+	-moz-animation-name: tada;
+	-o-animation-name: tada;
+	animation-name: tada;
 }

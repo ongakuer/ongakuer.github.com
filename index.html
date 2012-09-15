@@ -14,7 +14,7 @@
 <body class="newfont">
 	<div id="wrapper" class="logo cf">
 		<div class="github left">
-			github
+			<a href="https://github.com/ongakuer" target="_blank">github</a>
 		</div>
 
 		<div class="line left"></div>
@@ -37,23 +37,34 @@
 
 	<script>
 		$(function(){
-			var tipX, tipY, tipWidth;
+			var tiptitle, tipX, tipY, tipWidth, thisWidth, moveLeft;
 	    	$.backstretch(["./img/bg.jpg"]);
 	    	$('#sns-wrap a').hover(function(ev) {
-	    			var _this 	 = $(this),
-	    				tiptitle = _this.attr('title');
+	    		var _this = $(this);
 
-	    			$('#tips').text(tiptitle);
-	    			tipX = Math.round(_this.offset().top) - 29;
-	    			tipY = Math.round(_this.offset().left);
-					tipWidth = $('#tips').width() / -2;
-	    			$('#tips').text(tiptitle).css({
-	    				top: tipX+"px",
-	    				left: tipY+"px",
-	    				marginLeft: tipWidth+"px"
-	    			}).stop(true,true).fadeIn(100);
+    			tiptitle = _this.attr('title');
+    			_this.attr('title','');
+    			$('#tips').text(tiptitle);
+    			tipX = Math.round(_this.offset().top) - 29;
+    			tipY = Math.round(_this.offset().left);
+				tipWidth = $('#tips').width() ;
+				thisWidth = _this.width()
+
+    			if(tipWidth > thisWidth){
+    				moveLeft = tipWidth / -2;
+    			}else{
+    				moveLeft = (thisWidth - 1.5*tipWidth)/2;
+    			}
+
+    			$('#tips').text(tiptitle).css({
+    				top: tipX+"px",
+    				left: tipY+"px",
+    				marginLeft: moveLeft+"px"
+    			}).stop(true,true).fadeIn(100);
+
 	    	}, function() {
 	    		$('#tips').stop(true,true).fadeOut(100);
+	    		$(this).attr('title',tiptitle)
 	    	});
 		})
 	</script>
